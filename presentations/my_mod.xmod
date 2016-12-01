@@ -1,0 +1,38 @@
+<OmniFortranModule version="1.0">
+  <name>my_mod</name>
+  <depends>
+  </depends>
+  <typeTable>
+    <FbasicType type="I7ffaf7c07fe0" intent="in" ref="Fint"/>
+    <FbasicType type="R7ffaf7c08ea0" ref="Freal">
+      <kind>
+        <FintConstant type="Fint">8</FintConstant>
+      </kind>
+    </FbasicType>
+    <FbasicType type="R7ffaf7c09040" ref="R7ffaf7c08ea0"/>
+    <FbasicType type="A7ffaf7c09110" ref="R7ffaf7c09040">
+      <indexRange>
+        <lowerBound>
+          <FintConstant type="Fint">1</FintConstant>
+        </lowerBound>
+        <upperBound>
+          <Var type="I7ffaf7c07fe0" scope="local">nz</Var>
+        </upperBound>
+      </indexRange>
+    </FbasicType>
+    <FfunctionType type="F7ffaf7c077f0" return_type="Fvoid">
+      <params>
+        <name type="I7ffaf7c07fe0">nz</name>
+      </params>
+    </FfunctionType>
+  </typeTable>
+  <identifiers>
+    <id type="F7ffaf7c077f0" sclass="ffunc" original_name="my_kernel" declared_in="my_mod">
+      <name>my_kernel</name>
+    </id>
+  </identifiers>
+  <interfaceDecls>
+  </interfaceDecls>
+  <aux_info>
+  </aux_info>
+</OmniFortranModule>

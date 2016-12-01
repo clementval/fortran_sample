@@ -1,0 +1,118 @@
+<XcodeProgram source="xcodeml_sample.f90"
+              language="Fortran"
+              time="2016-12-01 10:41:34"
+              compiler-info="XcodeML/Fortran-FrontEnd"
+              version="1.0">
+  <typeTable>
+    <FbasicType type="I7fa8ac505ef0" intent="in" ref="Fint"/>
+    <FbasicType type="R7fa8ac506db0" ref="Freal">
+      <kind>
+        <FintConstant type="Fint">8</FintConstant>
+      </kind>
+    </FbasicType>
+    <FbasicType type="R7fa8ac506f50" ref="R7fa8ac506db0"/>
+    <FbasicType type="A7fa8ac507020" ref="R7fa8ac506f50">
+      <indexRange>
+        <lowerBound>
+          <FintConstant type="Fint">1</FintConstant>
+        </lowerBound>
+        <upperBound>
+          <Var type="I7fa8ac505ef0" scope="local">nz</Var>
+        </upperBound>
+      </indexRange>
+    </FbasicType>
+    <FfunctionType type="F7fa8ac5041e0" return_type="Fvoid" is_program="true"/>
+    <FfunctionType type="F7fa8ac5047b0" return_type="Fvoid">
+      <params>
+        <name type="I7fa8ac505ef0">nz</name>
+      </params>
+    </FfunctionType>
+  </typeTable>
+  <globalSymbols>
+    <id type="F7fa8ac5041e0" sclass="ffunc">
+      <name>test</name>
+    </id>
+    <id type="F7fa8ac5047b0" sclass="ffunc">
+      <name>my_kernel</name>
+    </id>
+  </globalSymbols>
+  <globalDeclarations>
+    <FfunctionDefinition lineno="1" file="xcodeml_sample.f90">
+      <name type="F7fa8ac5041e0">test</name>
+      <symbols>
+        <id type="F7fa8ac5047b0" sclass="ffunc">
+          <name>my_kernel</name>
+        </id>
+      </symbols>
+      <declarations>
+      </declarations>
+      <body>
+        <exprStatement lineno="2" file="xcodeml_sample.f90">
+          <functionCall type="Fvoid">
+            <name type="F7fa8ac5047b0">my_kernel</name>
+            <arguments>
+              <FintConstant type="Fint">10</FintConstant>
+            </arguments>
+          </functionCall>
+        </exprStatement>
+      </body>
+    </FfunctionDefinition>
+    <FfunctionDefinition lineno="5" file="xcodeml_sample.f90">
+      <name type="F7fa8ac5047b0">my_kernel</name>
+      <symbols>
+        <id type="F7fa8ac5047b0" sclass="ffunc">
+          <name>my_kernel</name>
+        </id>
+        <id type="I7fa8ac505ef0" sclass="fparam">
+          <name>nz</name>
+        </id>
+        <id type="Fint" sclass="flocal">
+          <name>i</name>
+        </id>
+        <id type="A7fa8ac507020" sclass="flocal">
+          <name>a</name>
+        </id>
+      </symbols>
+      <declarations>
+        <varDecl lineno="6" file="xcodeml_sample.f90">
+          <name type="I7fa8ac505ef0">nz</name>
+        </varDecl>
+        <varDecl lineno="7" file="xcodeml_sample.f90">
+          <name type="Fint">i</name>
+        </varDecl>
+        <varDecl lineno="8" file="xcodeml_sample.f90">
+          <name type="A7fa8ac507020">a</name>
+        </varDecl>
+      </declarations>
+      <body>
+        <FdoStatement lineno="10" file="xcodeml_sample.f90">
+          <Var type="Fint" scope="local">i</Var>
+          <indexRange>
+            <lowerBound>
+              <FintConstant type="Fint">1</FintConstant>
+            </lowerBound>
+            <upperBound>
+              <Var type="I7fa8ac505ef0" scope="local">nz</Var>
+            </upperBound>
+            <step>
+              <FintConstant type="Fint">1</FintConstant>
+            </step>
+          </indexRange>
+          <body>
+            <FassignStatement lineno="11" file="xcodeml_sample.f90">
+              <FarrayRef type="R7fa8ac506f50">
+                <varRef type="A7fa8ac507020">
+                  <Var type="A7fa8ac507020" scope="local">a</Var>
+                </varRef>
+                <arrayIndex>
+                  <Var type="Fint" scope="local">i</Var>
+                </arrayIndex>
+              </FarrayRef>
+              <Var type="Fint" scope="local">i</Var>
+            </FassignStatement>
+          </body>
+        </FdoStatement>
+      </body>
+    </FfunctionDefinition>
+  </globalDeclarations>
+</XcodeProgram>
